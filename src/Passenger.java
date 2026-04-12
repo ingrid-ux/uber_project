@@ -1,7 +1,7 @@
 
 public class Passenger extends CoordinatePair {
 	
-	UberDriver closestUberDriver = null;
+	private UberDriver closestUberDriver = null;
 	
 	public Passenger(double x, double y) {
 		super(x, y); //Assigns the x and y values inherited from CoordinatePair
