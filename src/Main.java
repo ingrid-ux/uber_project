@@ -1,15 +1,49 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        
+        // create uber drivers
+        ArrayList<UberDriver> drivers = new ArrayList<>();
+        drivers.add(new UberDriver(1, 2));
+        drivers.add(new UberDriver(5, 5));
+        drivers.add(new UberDriver(-2, 3));
+        
+        // create passengers
+        ArrayList<Passenger> passengers = new ArrayList<>();
+        passengers.add(new Passenger(2, 3));
+        passengers.add(new Passenger(6, 4));
+        passengers.add(new Passenger(0, 0));
+        
+        // for each passenger, find the closest driver
+        for (Passenger p : passengers) {
+            UberDriver closest = null;
+            double minDistance = Double.MAX_VALUE;
+            
+            for (UberDriver d : drivers) {
+                double distance = CoordinatePair.dist(p, d);
+                
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closest = d;
+                }
+            }
+            
+            //closest driver to passenger
+            p.setClosestUberDriver(closest);
+        }
+        
+        //print
+        for (Passenger p : passengers) {
+            UberDriver d = p.getClosestUberDriver();
+            
+            if (d != null) {
+                System.out.println("Passenger at (" + p.getX() + ", " + p.getY() + 
+                                   ") -> Closest Driver at (" + d.getX() + ", " + d.getY() + ")");
+            } else {
+                System.out.println("Passenger at (" + p.getX() + ", " + p.getY() + 
+                                   ") -> No driver available");
+            }
         }
     }
 }
