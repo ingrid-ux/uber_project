@@ -1,6 +1,22 @@
 import java.util.ArrayList;
 
 public class Main {
+
+    public static UberDriver nearestBaseline(ArrayList<UberDriver> drivers, Passenger p) {
+        UberDriver best = drivers.get(0);
+        double bestD2 = CoordinatePair.dist2(best, p);
+
+        for (int i = 1; i < drivers.size(); i++) {
+            UberDriver d = drivers.get(i);
+            double d2 = CoordinatePair.dist2(d, p);
+            if (d2 < bestD2) {
+                bestD2 = d2;
+                best = d;
+            }
+        }
+        return best;
+    }
+
     public static void main(String[] args) {
         
         // create uber drivers
@@ -39,11 +55,27 @@ public class Main {
             
             if (d != null) {
                 System.out.println("Passenger at (" + p.getX() + ", " + p.getY() + 
-                                   ") -> Closest Driver at (" + d.getX() + ", " + d.getY() + ")");
+                                   ") Closest Driver at (" + d.getX() + ", " + d.getY() + ")");
             } else {
                 System.out.println("Passenger at (" + p.getX() + ", " + p.getY() + 
-                                   ") -> No driver available");
+                                   ") No driver nearby available");
             }
         }
+
+        KDTree tree = new KDTree(drivers);
+
+        for (Passenger p : passengers) {
+            UberDriver b = nearestBaseline(drivers, p);
+            UberDriver k = tree.nearest(p);
+
+            System.out.printf("Passenger (%.1f, %.1f) -> baseline (%.1f, %.1f), kd-tree (%.1f, %.1f)%n",
+                    p.getX(), p.getY(),
+                    b.getX(), b.getY(),
+                    k.getX(), k.getY());
+        }
+
+
+
+
     }
 }

@@ -40,5 +40,10 @@ public abstract class CoordinatePair {
 	public static double dist(CoordinatePair a, CoordinatePair b) {
 		return Math.sqrt(Math.pow((a.getX() - b.getX()), 2) + Math.pow((a.getY() - b.getY()), 2));
 	}
+	public static double dist2(CoordinatePair a, CoordinatePair b){
+		double dx = a.getX() - b.getX();
+		double dy = a.getY() - b.getY();
+		return dx * dx + dy * dy;
+	}
 	
 }

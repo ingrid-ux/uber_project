@@ -1,9 +1,9 @@
 import java.util.Comparator;
 
-public class pointComparator implements Comparator<UberDriver> {
+public class AxisComparator implements Comparator<UberDriver> {
     private final int axis; // 0 = x, 1 = y
 
-    public pointComparator(int axis) {
+    public AxisComparator(int axis) {
         this.axis = axis;
     }
 
