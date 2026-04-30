@@ -1,12 +1,12 @@
-## Pairing Drivers and Passengers with Algorithms
+# Pairing Drivers and Passengers with Algorithms
 
-# How to run the code:
+## How to run the code:
   In order to run the code, you must compile it with a java compiler, ensuring that all of the .class files are in the same folder, and then you run
   the program using the java command.
 
-# How to reproduce the experiments:
+## How to reproduce the experiments:
 
-# The function of each file:
+## The function of each file:
 
   **Main.java**: This is the main file for the program, containing the algorithms for solving the problem, the inputs, and the output. The two algorithms within
   the Main.java file are a brute force scanning algorithm, and a Divide and Conquer KD-Tree algorithm that is designed to be more efficient.
