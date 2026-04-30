@@ -19,3 +19,7 @@
 
   **Passenger.java**: This is the file for the Passenger class, which is a child class of the CoordinatePoint class and contains an UberDriver variable to store
   a reference to the closest UberDriver to the given passenger.
+
+  **KDTree.java**: KDTree implementation of 2D kd tree that takes UberDriver objects for the purpose of efficiently finding the nearest neighbor (nearest uber driver), given a point of passenger location
+
+  **AxisComparator**: Sorts Uberdriver objects between its x or y coordinate. If those values are equal, then it uses the other coordinate to break the tie to make sure they are ordered.
