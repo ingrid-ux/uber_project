@@ -61,7 +61,7 @@ public class KDTree {
         Node far = (diff < 0) ? node.right : node.left;
 
         if(Math.pow(diff,2) < CoordinatePair.dist2(best,p)){
-            best = search(near,p,best);
+            best = search(far,p,best);
         }
         return best;
 
