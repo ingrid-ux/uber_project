@@ -66,9 +66,9 @@ public class Main {
 
         for (Passenger p : passengers) {
             UberDriver b = nearestBaseline(drivers, p);
-            UberDriver k = tree.nearest(p);
+            UberDriver k = tree.findNearest(p);
 
-            System.out.printf("Passenger (%.1f, %.1f) -> baseline (%.1f, %.1f), kd-tree (%.1f, %.1f)%n",
+            System.out.printf("Passenger at (%f, %f) | Closest Driver (%f, %f), kd-tree (%f, %f)%n",
                     p.getX(), p.getY(),
                     b.getX(), b.getY(),
                     k.getX(), k.getY());

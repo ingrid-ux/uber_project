@@ -5,12 +5,12 @@ import java.util.List;
 public class KDTree {
 
     private static class Node{
-        UberDriver point;
+        UberDriver driver;
         Node left, right; // left & right child
         int axis; // 0 : x split // 1: y split
 
         public Node(UberDriver p, int axis){
-            this.point = p;
+            this.driver = p;
             this.axis = axis;
         }
     }
@@ -38,10 +38,8 @@ public class KDTree {
         return node;
     }
 
-    public UberDriver nearest(Passenger q) {
-        Best best = new Best(root.point, CoordinatePair.dist2(root.point, q));
-        search(root, q, best);
-        return best.point;
+    public UberDriver findNearest(Passenger p) {
+        return search(root, p, root.driver);
     }
 
     private static class Best {
@@ -50,7 +48,22 @@ public class KDTree {
         Best(UberDriver point, double d2) { this.point = point; this.d2 = d2; }
     }
 
-    private void search(Node node, Passenger q, Best best) {
+    private UberDriver search(Node node, Passenger p, UberDriver best) {
+        if (node == null) return best;
+
+        if (CoordinatePair.dist2(node.driver,p) < CoordinatePair.dist2(best,p)){
+            best = node.driver;
+        }
+
+        double diff = (node.axis == 0) ? (p.getX() - node.driver.getX()) : (p.getY() - node.driver.getY());
+
+        Node near = (diff < 0) ? node.left : node.right;
+        Node far = (diff < 0) ? node.right : node.left;
+
+        if(Math.pow(diff,2) < CoordinatePair.dist2(best,p)){
+            best = search(near,p,best);
+        }
+        return best;
 
     }
 }
