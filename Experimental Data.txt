@@ -1,0 +1,127 @@
+Random Seeds for all experiments: 4292026, 4302026, 4312026, 4322026
+Note: Despite the seeds staying the same, time taken varies slightly between each running of the experiment
+
+Computer Specs:
+OS: Windows 11
+CPU: AMD Ryzen 5 3500U with 4 cores @ 2.10 GHz
+Memory: 8gb ram
+
+Experiment 1.1: Equal amount of drivers and passengers (n = m)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 1000
+	Passengers: randomly generated array of size 1000
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 37 ms
+		Improved: 24 ms
+	Seed 4302026:
+		Bruteforce: 40 ms
+		Improved: 24 ms
+	Seed 4312026:
+		Bruteforce: 40 ms
+		Improved: 22 ms
+	Seed 4322026:
+		Bruteforce: 36 ms
+		Improved: 22 ms
+		
+Experiment 1.2: Equal amount of drivers and passengers (n = m)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 100
+	Passengers: randomly generated array of size 100
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 4 ms
+		Improved: 10 ms
+	Seed 4302026:
+		Bruteforce: 4 ms
+		Improved: 15 ms
+	Seed 4312026:
+		Bruteforce: 4 ms
+		Improved: 11 ms
+	Seed 4322026:
+		Bruteforce: 4 ms
+		Improved: 9 ms
+
+Experiment 2.1: More passengers than drivers (m > n)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 1000
+	Passengers: randomly generated array of size 10000
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 119 ms
+		Improved: 29 ms
+	Seed 4302026:
+		Bruteforce: 133 ms
+		Improved: 38 ms
+	Seed 4312026:
+		Bruteforce: 128 ms
+		Improved: 28 ms
+	Seed 4322026:
+		Bruteforce: 111 ms
+		Improved: 27 ms
+		
+Experiment 2.2: More passengers than drivers (m > n)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 100
+	Passengers: randomly generated array of size 1000
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 17 ms
+		Improved: 12 ms
+	Seed 4302026:
+		Bruteforce: 22 ms
+		Improved: 16 ms
+	Seed 4312026:
+		Bruteforce: 16 ms
+		Improved: 9 ms
+	Seed 4322026:
+		Bruteforce: 18 ms
+		Improved: 13 ms
+
+Experiment 3.1: More passengers than drivers (m > n)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 10000
+	Passengers: randomly generated array of size 1000
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 138 ms
+		Improved: 99 ms
+	Seed 4302026:
+		Bruteforce: 126 ms
+		Improved: 75 ms
+	Seed 4312026:
+		Bruteforce: 146 ms
+		Improved: 88 ms
+	Seed 4322026:
+		Bruteforce: 111 ms
+		Improved: 87 ms
+		
+Experiment 3.2: More passengers than drivers (m > n)
+Restrictions: Range of values for x and y is -50 to 50
+Inputs:
+	UberDrivers: randomly generated array of size 1000
+	Passengers: randomly generated array of size 100
+	
+Results:
+	Seed 4292026:
+		Bruteforce: 16 ms
+		Improved: 24 ms
+	Seed 4302026:
+		Bruteforce: 19 ms
+		Improved: 23 ms
+	Seed 4312026:
+		Bruteforce: 17 ms
+		Improved: 29 ms
+	Seed 4322026:
+		Bruteforce: 17 ms
+		Improved: 29 ms
