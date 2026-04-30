@@ -42,12 +42,6 @@ public class KDTree {
         return search(root, p, root.driver);
     }
 
-    private static class Best {
-        UberDriver point;
-        double d2;
-        Best(UberDriver point, double d2) { this.point = point; this.d2 = d2; }
-    }
-
     private UberDriver search(Node node, Passenger p, UberDriver best) {
         if (node == null) return best;
 
