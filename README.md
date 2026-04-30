@@ -11,7 +11,7 @@ Random.nextInt(-50, 50), first generating x then y, and generating all the uber 
 using seeds 4292026-4322026 for each run of each subexperiment.
 
 **Where the seeds and input were defined**: The seeds were defined as constant values within the code, as the experiment was done through hardcoding. The random seeds used
-are defined here: 4292026, 4302026, 4312026, 4322026.
+are listed here: 4292026, 4302026, 4312026, 4322026.
 
 **How were the averages computed**: The averages for each subexperiment were computed by finding the mean of the 4 runs. This means it was the average of seeds
 4292026, 4302026, 4312026, and 4322026, calculated for each subexperiment.
