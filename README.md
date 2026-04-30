@@ -6,6 +6,19 @@
 
 ## How to reproduce the experiments:
 
+**How the raw data was generated**: The raw data was generated using Java's Random class. For each experiment the range for each coordinate was created with
+Random.nextInt(-50, 50), first generating x then y, and generating all the uber drivers before the passengers. The seed was determined when the object was created,
+using seeds 4292026-4322026 for each run of each subexperiment.
+
+**Where the seeds and input were defined**: The seeds were defined as constant values within the code, as the experiment was done through hardcoding. The random seeds used
+are defined here: 4292026, 4302026, 4312026, 4322026.
+
+**How were the averages computed**: The averages for each subexperiment were computed by finding the mean of the 4 runs. This means it was the average of seeds
+4292026, 4302026, 4312026, and 4322026, calculated for each subexperiment.
+
+**How were the charts produced**: The charts were produced through canva, created as bar graphs using the average of each subexperiment. A separate pair of bars was
+added for each subexperiment, with one bar for the baseline algorithm's average and one for the improved algorithm's average.
+
 ## The function of each file:
 
   **Main.java**: This is the main file for the program, containing the algorithms for solving the problem, the inputs, and the output. The two algorithms within
